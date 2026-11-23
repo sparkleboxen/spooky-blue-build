@@ -53,13 +53,9 @@ modules:
       - scope: user
         notify: true
         repo:
-          url: https://adonm.github.io/ghostty-flatpak/ghostty.flatpakref
-          title: ghostty-flatpak
-        repo:
           url: https://dl.flathub.org/repo/flathub.flatpakrepo
           title: Flathub (user)
         install:
-          - com.mitchellh.ghostty
           - app.zen_browser.zen
           - com.discordapp.Discord
           - com.github.tchx84.Flatseal
