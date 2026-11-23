@@ -1,16 +1,21 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-# image will be published to ghcr.io/<user>/<name>
-name: spooky-blue-build
-# description will be included in the image's metadata
-description: This is my personal OS image.
 
-# the base image to build on top of (FROM) and the version tag to use
+version: 1
+
+# Name of your custom image (published to ghcr.io/<user>/<name>)
+name: my-custom-bluebuild-image
+
+# Description of the image
+description: Custom Fedora Silverblue image built with BlueBuild
+
+# Base OCI image to build on top of
 base-image: ghcr.io/ublue-os/silverblue-main
-image-version: latest # You can pin to a specific version of Fedora as well
 
-# module configuration, executed in order
-# you can include multiple instances of the same module
+# Image version tag
+image-version: stable
+
+# List of BlueBuild modules to run
 modules:
   - type: files
     files:
@@ -20,23 +25,25 @@ modules:
   - type: dnf
     repos:
       cleanup: true
+      keys:
+        - https://repo.protonvpn.com/fedora-45-stable/public_key.asc
       files:
-        - https://repo.protonvpn.com/fedora-$releasever-stable
-        - https://repos.fyralabs.com/terra$releasever
+        - protonvpn-stable.repo
+        - terra.repo
       enable:
         - protonvpn-stable
         - terra
-      copr:
-        enable:
-          - scottames/ghostty
-        disable:
-          - phracek/PyCharm
+    copr:
+      enable:
+        - scottames/ghostty
+      disable:
+        - phracek/PyCharm
     install:
       skip-unavailable: true
       packages:
         - repo: protonvpn-stable
           packages:
-            - protonvpn-app # correct package name???
+            - proton-vpn-gnome-desktop
         - repo: terra
           packages:
             - mangowm
