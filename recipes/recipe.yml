@@ -39,6 +39,7 @@ modules:
         - fastfetch
         - fish
         - fzf
+        - ghostty
         - libappindicator-gtk3
         - tailscale
         - wlr-randr
@@ -65,7 +66,6 @@ modules:
           - io.freetubeapp.FreeTube
           - io.github.martchus.syncthingtray
           - io.github.peazip.PeaZip
-          - io.github.sinelaw.fresh
           - io.mpv.Mpv
           - md.obsidian.Obsidian
           - org.cataclysmdda.CataclysmDDA
