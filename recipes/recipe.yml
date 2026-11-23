@@ -21,9 +21,12 @@ modules:
     files:
       - source: system/
         destination: /
+      - source: zen-browser.repo
+        destination: /etc/yum.repos.d
 
   - type: script
     snippets:
+      - "sudo rpm --import https://zenbrowser-dnfrepo.qomarhsn.com/RPM-GPG-KEY-zen-browser"
       - "dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release terra-gpg-keys"
 
   - type: dnf
@@ -44,6 +47,7 @@ modules:
         - tailscale
         - wlr-randr
         - xdg-desktop-portal-wlr
+        - zen-browser
     remove:
       packages:
         - firefox
@@ -57,7 +61,6 @@ modules:
           url: https://dl.flathub.org/repo/flathub.flatpakrepo
           title: Flathub (user)
         install:
-          - app.zen_browser.zen
           - com.discordapp.Discord
           - com.github.tchx84.Flatseal
           - com.github.zocker_160.SyncThingy
