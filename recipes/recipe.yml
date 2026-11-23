@@ -1,13 +1,13 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 
-version: 1.01
+version: 1
 
 # Name of your custom image (published to ghcr.io/<user>/<name>)
 name: my-custom-bluebuild-image
 
 # Description of the image
-description: Custom Fedora Silverblue image built with BlueBuild
+description: Custom Fedora Silverblue image with MangoWM and Noctalia, built with BlueBuild
 
 # Base OCI image to build on top of
 base-image: ghcr.io/ublue-os/silverblue-main
