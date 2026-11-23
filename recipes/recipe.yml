@@ -26,11 +26,11 @@ modules:
       enable:
         - protonvpn-stable
         - terra
-    copr:
-      enable:
-        - scottames/ghostty
-      disable:
-        - phracek/PyCharm
+      copr:
+        enable:
+          - scottames/ghostty
+        disable:
+          - phracek/PyCharm
     install:
       skip-unavailable: true
       packages:
