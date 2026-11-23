@@ -31,7 +31,7 @@ modules:
 
   - type: dnf
     repos:
-      cleanup: true
+      cleanup: false
     install:
       skip-unavailable: true
       packages:
