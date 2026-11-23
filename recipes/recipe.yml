@@ -29,12 +29,9 @@ modules:
   - type: dnf
     repos:
       cleanup: true
-      copr:
-        - scottames/ghostty
     install:
       skip-unavailable: true
       packages:
-        - ghostty
         - mangowm
         - noctalia-nightly
         - brightnessctl
@@ -55,6 +52,11 @@ modules:
     configurations:
       - scope: user
         notify: true
+        repo:
+          url: https://adonm.github.io/ghostty-flatpak/ghostty.flatpakref
+          title: ghostty-flatpak
+        install:
+          - com.mitchellh.ghostty
         repo:
           url: https://dl.flathub.org/repo/flathub.flatpakrepo
           title: Flathub (user)
