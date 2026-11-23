@@ -25,14 +25,10 @@ modules:
   - type: dnf
     repos:
       cleanup: true
-      keys:
-        - https://repo.protonvpn.com/fedora-45-stable/public_key.asc
       files:
-        - protonvpn-stable.repo
-        - terra.repo
-      enable:
-        - protonvpn-stable
-        - terra
+        - https://githubusercontent.com
+      keys:
+        - https://fyralabs.com
     copr:
       enable:
         - scottames/ghostty
@@ -41,9 +37,6 @@ modules:
     install:
       skip-unavailable: true
       packages:
-        - repo: protonvpn-stable
-          packages:
-            - proton-vpn-gnome-desktop
         - repo: terra
           packages:
             - mangowm
@@ -75,6 +68,7 @@ modules:
           - com.github.tchx84.Flatseal
           - com.github.zocker_160.SyncThingy # dnf?
           - com.heroicgameslauncher.hgl
+          - com.protonvpn.www
           - io.freetubeapp.FreeTube
           - io.github.martchus.syncthingtray # dnf?
           - io.github.peazip.PeaZip
