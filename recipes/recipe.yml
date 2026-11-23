@@ -13,7 +13,7 @@ description: Custom Fedora Silverblue image built with BlueBuild
 base-image: ghcr.io/ublue-os/silverblue-main
 
 # Image version tag
-image-version: stable
+image-version: latest
 
 # List of BlueBuild modules to run
 modules:
@@ -22,25 +22,23 @@ modules:
       - source: system/
         destination: /
 
+  - type: script
+    snippets:
+      - "dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release terra-gpg-keys"
+
   - type: dnf
     repos:
       cleanup: true
-      files:
-        - https://githubusercontent.com
-      keys:
-        - https://fyralabs.com
-    copr:
-      enable:
-        - scottames/ghostty
-      disable:
-        - phracek/PyCharm
+      copr:
+        enable:
+          - scottames/ghostty
+        disable:
+          - phracek/PyCharm
     install:
       skip-unavailable: true
       packages:
-        - repo: terra
-          packages:
-            - mangowm
-            - noctalia-nightly
+        - mangowm
+        - noctalia-nightly
         - brightnessctl
         - distrobox
         - fastfetch
@@ -58,9 +56,10 @@ modules:
   - type: default-flatpaks
     configurations:
       - scope: user
+        notify: true
         repo:
+          url: https://dl.flathub.org/repo/flathub.flatpakrepo
           title: Flathub (user)
-      - notify: true
         install:
           - app.zen_browser.zen # dnf
           - com.discordapp.Discord
