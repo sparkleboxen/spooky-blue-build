@@ -30,10 +30,7 @@ modules:
     repos:
       cleanup: true
       copr:
-        enable:
-          - scottames/ghostty
-        disable:
-          - phracek/PyCharm
+        - scottames/ghostty
     install:
       skip-unavailable: true
       packages:
