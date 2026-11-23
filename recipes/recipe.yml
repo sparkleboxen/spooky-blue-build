@@ -19,7 +19,7 @@ image-version: latest
 modules:
   - type: files
     files:
-      - source: system/
+      - source: system
         destination: /
       - source: zen-browser.repo
         destination: /etc/yum.repos.d
