@@ -29,6 +29,11 @@ modules:
       - "sudo rpm --import https://zenbrowser-dnfrepo.qomarhsn.com/RPM-GPG-KEY-zen-browser"
       - "dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release terra-gpg-keys"
 
+  - type: chezmoi
+    repository: "https://github.com/sparkleboxen/dotfiles"
+    all-users: false # make users have to enable chezmoi manually
+    file-conflict-policy: replace # override changed files with those from the repo
+
   - type: dnf
     repos:
       cleanup: true
