@@ -31,7 +31,7 @@ modules:
 
   - type: chezmoi
     repository: "https://github.com/sparkleboxen/dotfiles"
-    all-users: false # make users have to enable chezmoi manually
+    all-users: true # enable chezmoi for all users
     file-conflict-policy: replace # override changed files with those from the repo
 
   - type: dnf
