@@ -1,9 +1,0 @@
-[zen-browser]
-name=Zen Browser
-baseurl=https://zenbrowser-dnfrepo.qomarhsn.com/
-enabled=1
-gpgcheck=1
-repo_gpgcheck=1
-gpgkey=https://zenbrowser-dnfrepo.qomarhsn.com/RPM-GPG-KEY-zen-browser
-skip_if_unavailable=True
-metadata_expire=6h
