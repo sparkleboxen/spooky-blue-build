@@ -44,6 +44,7 @@ modules:
         - fish
         - ghostty
         - libappindicator-gtk3
+        - plocate
         - tailscale
         - wlr-randr
         - xdg-desktop-portal-wlr
@@ -76,8 +77,9 @@ modules:
           - org.gnome.Calculator
           - org.gnome.Loupe
           - org.gnome.seahorse.Application
-          - org.jellyfin.JellyfinDesktop # this and jellyfin-media-player?
+          - org.jellyfin.JellyfinDesktop
           - org.pulseaudio.pavucontrol
           - org.qbittorrent.qBittorrent
+          - org.virt_manager.virt-manager
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
