@@ -4,7 +4,7 @@
 #version: 1
 
 # Name of your custom image (published to ghcr.io/<user>/<name>)
-name: my-custom-bluebuild-image
+name: spooky-blue-build
 
 # Description of the image
 description: Custom Fedora Silverblue image with MangoWM and Noctalia, built with BlueBuild
