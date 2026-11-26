@@ -70,7 +70,7 @@ modules:
           - io.github.martchus.syncthingtray
           - io.github.peazip.PeaZip
           - io.mpv.Mpv
-          - fr.handbrake.ghb
+          - fr.handbrake.HandBrakeCLI
           - md.obsidian.Obsidian
           - org.cataclysmdda.CataclysmDDA
           - org.gnome.Calculator
